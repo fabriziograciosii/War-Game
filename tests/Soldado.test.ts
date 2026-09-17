@@ -2,6 +2,7 @@ import { describe, test, expect } from 'vitest';
 import { Soldado } from '../Combate/Soldado';
 import { Tanque } from '../Combate/Tanque'; 
 import { Buque } from '../Combate/Buque';
+import {Revolver} from "../Armas/Revolver"
 
 
 describe('Pruebas de la clase Soldado', () => {
@@ -20,8 +21,8 @@ describe('Pruebas de la clase Soldado', () => {
 
     const atacanteElegido = posiblesAtacantes[indiceAlAzar]!;
 
-    atacanteElegido.disparar(soldado); 
-
+    atacanteElegido.equiparArma(new Revolver()); 
+    atacanteElegido.disparar(soldado);
 
     expect(soldado.estaVivo()).toBe(false);
     

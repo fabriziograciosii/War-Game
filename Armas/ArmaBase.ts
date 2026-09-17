@@ -9,7 +9,8 @@ export abstract class ArmaBase {
 
     public apretarGatillo() : number {
 
-        const danioCausado = this.municion > 0 ? this.municion -1 : 0;
+        const danioCausado = this.municion > 0 ? this.danio : 0;
+        this.municion = this.municion > 0 ? this.municion -1 : 0;
 
         return danioCausado;
     }
