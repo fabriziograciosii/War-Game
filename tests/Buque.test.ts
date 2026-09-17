@@ -13,7 +13,14 @@ describe('Pruebas de la clase Buque', () => {
 
     expect(buque.estaVivo()).toBe(true);
 
-    tanque.disparar(buque);
+    const posiblesAtacantes = [soldado, tanque];
+
+    const indiceAlAzar = Math.floor(Math.random() * posiblesAtacantes.length);
+
+    const atacanteElegido = posiblesAtacantes[indiceAlAzar]!;
+
+    atacanteElegido.disparar(buque); 
+
 
 
     expect(buque.estaVivo()).toBe(true);
