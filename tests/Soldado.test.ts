@@ -5,7 +5,7 @@ import { Tanque } from '../Combate/Tanque';
 
 describe('Pruebas de la clase Soldado', () => {
   
-  test('Un soldado nace con 1 de vida, recibe un disparo y muere por cualquier unidad', () => {
+  test('Un soldado nace con 1 de vida, recibe un disparo del tanque y muere', () => {
 
     const soldado = new Soldado();
     const tanque = new Tanque();
