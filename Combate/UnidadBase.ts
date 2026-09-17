@@ -12,4 +12,12 @@ export class UnidadBase {
     public estaVivo() : boolean {
         return this.vida > 0 
     }
+
+    private setVida(value : number) {
+         this.vida = value 
+    }
+
+    public disparar(objetivo: UnidadBase) {
+        objetivo.recibirDisparo();
+    }
 }
