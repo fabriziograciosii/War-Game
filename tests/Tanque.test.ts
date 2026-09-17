@@ -1,6 +1,7 @@
 import { describe, test, expect } from 'vitest';
 import { Soldado } from '../Combate/Soldado';
-import { Tanque } from '../Combate/Tanque'; 
+import { Tanque } from '../Combate/Tanque';
+import { Buque } from '../Combate/Buque'; 
 
 
 describe('Pruebas de la clase Soldado', () => {
@@ -9,10 +10,19 @@ describe('Pruebas de la clase Soldado', () => {
 
     const soldado = new Soldado();
     const tanque = new Tanque();
+    const buque = new Buque()
 
     expect(tanque.estaVivo()).toBe(true);
 
-    soldado.disparar(tanque);
+    expect(tanque.estaVivo()).toBe(true);
+
+    const posiblesAtacantes = [soldado, buque];
+
+    const indiceAlAzar = Math.floor(Math.random() * posiblesAtacantes.length);
+
+    const atacanteElegido = posiblesAtacantes[indiceAlAzar]!;
+
+    atacanteElegido.disparar(tanque); 
 
 
     expect(tanque.estaVivo()).toBe(true);
